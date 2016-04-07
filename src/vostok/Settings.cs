@@ -11,8 +11,6 @@ namespace Vostok
 		public Settings()
 		{
 			Pattern = "*.bak";
-			BufferSize = 4096;
-			StartHour = 5;
 		}
 
 		public string RootFolder { get; set; }
@@ -24,7 +22,6 @@ namespace Vostok
 		public bool UsePassive { get; set; }
 		public bool KeepAlive { get; set; }
 		public int BufferSize { get; set; }
-
 		public int StartHour { get; set; }
 
 		public override string ToString()
