@@ -3,6 +3,7 @@ Windows auto-installable service for send daily backup to ftp server
 
 For configuration, edit file palace.exe.config
 
+```xml
 <appSettings>
 	<add key="RootFolder" value=".\" />
 	<add key="Pattern" value="*.bak" />
@@ -14,10 +15,11 @@ For configuration, edit file palace.exe.config
 	<add key="KeepAlive" value="true" />
 	<add key="BufferSize" value="4096" />
 </appSettings>
+```
 
 install :
 
-> palace.exe /intall
+> palace.exe /install
 
 unstall : 
 
