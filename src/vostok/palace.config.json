@@ -1,0 +1,8 @@
+{
+  "ServiceName": "Vostok",
+  "ServiceDisplayName": "Vostock backup",
+  "ServiceDescription": "Vostock - Daily send backup files to ftp ",
+  "UpdateUriList": [],
+  "ScanIntervalInSeconds": "60",
+  "ApiKey": null
+}
