@@ -5,7 +5,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+using TasksOnTime;
 using TasksOnTime.Scheduling;
+
 
 namespace Vostok
 {
@@ -37,7 +39,8 @@ namespace Vostok
 			}
 
 			var task = TasksOnTime.Scheduling.Scheduler.CreateScheduledTask<SendToFtpTask>("SendToFtpTask")
-							.EveryHour();
+							.EveryHour()
+							.AllowMultipleInstance(false);
 
 			TasksOnTime.GlobalConfiguration.Settings.ScheduledTaskDisabledByDefault = false;
 			TasksOnTime.Scheduling.Scheduler.Add(task);
