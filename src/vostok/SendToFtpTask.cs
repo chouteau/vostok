@@ -32,10 +32,18 @@ namespace Vostok
 				System.Diagnostics.Trace.WriteLine("Backup already executed");
 				return;
 			}
-			
+
+			var topDate = DateTime.Today;
+
+			// FirstUse
+			if (!System.IO.File.Exists(System.IO.Path.Combine(GlobalConfiguration.Settings.RootFolder, "delete.txt")))
+			{
+				topDate = DateTime.MinValue;
+			}
+
 			var fileList = from file in System.IO.Directory.GetFiles(GlobalConfiguration.Settings.RootFolder, GlobalConfiguration.Settings.Pattern, System.IO.SearchOption.AllDirectories)
 						   let fileInfo = new System.IO.FileInfo(file)
-						   where fileInfo.LastWriteTime > DateTime.Today
+						   where fileInfo.LastWriteTime > topDate
 						   orderby fileInfo.LastWriteTime descending
 						   select file;
 
